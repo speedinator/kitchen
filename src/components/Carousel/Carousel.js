@@ -45,8 +45,22 @@ const Carousel = () => {
 
     return (
         <div>
-            <h1>Kitchen Carousel</h1>
-            {/* <p>{response.items[0].fields.description}</p> */}
+            {carouselSlides.map((item) => {
+                const { id, slideBG, slideTitle, slideDescription } = item
+                return (
+                   <div> 
+                        <div className='slideWrap' style={{ backgroundImage: `url(${slideBG})`}}>
+                            <h1>Kitchen Carousel</h1>
+                        </div>
+
+                   </div>
+
+
+                )
+            })}
+            
+            
+            
         </div>
   )
 }
