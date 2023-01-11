@@ -5,9 +5,9 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-light">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          Around the world!
+          Worst of Chefkoch
           <span role="img" aria-label="book">
-            🌍
+              :>
           </span>
         </Link>
         <button
@@ -32,12 +32,12 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/about"
+                to="/carousel"
                 className="nav-link"
                 style={{ cursor: "pointer" }}
               >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
-                  About
+                  Carousel
                 </span>
               </Link>
             </li>
