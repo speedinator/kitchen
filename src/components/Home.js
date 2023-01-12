@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from "react-router-dom";
 // import { toast } from "react-toastify";
 import axios from "axios";
-// import Loading from "./Loading";
+import Loading from './Loading';
 
 import { client } from '../client'
 
@@ -68,8 +68,8 @@ const Home = () => {
 
     return (
         <div className="row">
-          
-          {carouselSlides.map((item) => {
+          {console.log(carouselSlides.length)}
+          {carouselSlides.length ? ( carouselSlides.map((item) => {
                 const { id, slideBG, slideTitle, slideDescription } = item
                 return (
                     <div className="col-md-4 mb-4" key={id}>
@@ -78,7 +78,7 @@ const Home = () => {
                         className="card-img-top"
                         src={slideBG}
                         alt={slideTitle}
-                        style={{ height: "200px", objectFit: "cover" }}
+                        style={{ height: "200px", objectFit: "scale-down" }}
                       />
                     <div className="card-body">
                         <h5 className="card-title">{slideTitle}</h5>
@@ -86,12 +86,19 @@ const Home = () => {
                         <Link to={`/post/${id}`} className="btn btn-primary">
                          More
                         </Link>
+                        {console.log({id})}
                       </div>
                     </div>
                   </div>
                 )
-          })}
-          </div>
+          }))
+          
+           : (
+        <div>
+            <Loading />
+        </div>
+            )}
+        </div>
         )
           
           
