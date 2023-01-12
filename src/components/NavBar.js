@@ -7,7 +7,7 @@ const NavBar = () => {
         <Link to="/" className="navbar-brand">
           Worst of Chefkoch
           <span role="img" aria-label="book">
-              :>
+              ":-)"
           </span>
         </Link>
         <button
