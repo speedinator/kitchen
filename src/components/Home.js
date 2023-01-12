@@ -10,11 +10,12 @@ import { client } from '../client'
 const Home = () => { 
 
     // const [posts, setPosts] = useState([]);
-    const [isCarouselLoading, setIsCarouselLoading] = useState(true)
+    // const [isCarouselLoading, setIsCarouselLoading] = useState(true)
     const [carouselSlides, setCarouselSlides] = useState([])
 
     const cleanUpCarouselSlides = useCallback((rawData) => {
         const cleanSlides = rawData.map((slide) => {
+            console.log(slide.sys.id)
             const {sys,fields} = slide
             const {id} = sys
             const slideTitle = fields.slideTitle
@@ -29,7 +30,7 @@ const Home = () => {
         
     }, []
     )
-    console.log(carouselSlides[0])
+    // console.log(carouselSlides[0])
     const getCarouselSlides = useCallback(
         async () => {
             try { 
@@ -68,7 +69,7 @@ const Home = () => {
 
     return (
         <div className="row">
-          {console.log(carouselSlides.length)}
+          {/* {console.log(carouselSlides.length)} */}
           {carouselSlides.length ? ( carouselSlides.map((item) => {
                 const { id, slideBG, slideTitle, slideDescription } = item
                 return (
@@ -86,7 +87,7 @@ const Home = () => {
                         <Link to={`/post/${id}`} className="btn btn-primary">
                          More
                         </Link>
-                        {console.log({id})}
+                        {/* {console.log({id})} */}
                       </div>
                     </div>
                   </div>
