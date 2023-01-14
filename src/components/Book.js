@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Loading from './Loading';
 import { client } from '../client'
 import HTMLFlipBook from "react-pageflip";
+import "./book.css"
 
 const Page = React.forwardRef((props, ref) => {
     console.log(ref)
@@ -21,17 +22,27 @@ console.log(Page)
 const Book = (props) => {
     // console.log(props.children)
   return (
-    <div>
-    <HTMLFlipBook width={300} height={500} props={props}>
-      <div className="demoPage" style={{backgroundImage: `url("https://via.placeholder.com/500")`}}>
- 
+    <div id="test">
+    <HTMLFlipBook width={500} height={500}>
+      <div 
+        className="demoPage"
+          
+        // style={{backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350)"}}>
+        >
+        <img src="https://via.placeholder.com/500"></img>
         Page 1
-       </div>
-      <div className="demoPage">Page 2</div>
+      </div>
+      <div
+        className="demoPage">
+        <img src="https://via.placeholder.com/500"></img>
+        Page 2
+      </div>
+      
       <div className="demoPage">Page 3</div>
       <div className="demoPage">Page 4</div>
+    
     </HTMLFlipBook>
-    <h1 style={{ color: 'blue', lineHeight : 10, padding: 20 }}>test</h1>
+    {/* <h1 style={{ color: 'blue', lineHeight : 10, padding: 20 }}>test</h1> */}
     </div>
   );
 
