@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from "react-router-dom";
 // import { toast } from "react-toastify";
-import axios from "axios";
+// import axios from "axios";
 import Loading from './Loading';
 
 import { client } from '../client'
@@ -35,7 +35,7 @@ const Home = () => {
         async () => {
             try { 
                 const response = await client.getEntries({ content_type: 'kitchenCarous' })
-                // console.log(response)
+                console.log(JSON.stringify(response))
                 const responseData = response.items
                 cleanUpCarouselSlides(responseData)
                 // console.log(responseData)
@@ -52,7 +52,7 @@ const Home = () => {
     }, [getCarouselSlides])
 
     
-    
+    // Bsp. aus Recap-Session
     // useEffect(() => {
     //     const getPosts = async () => {
     //       try {
@@ -95,54 +95,16 @@ const Home = () => {
           }))
           
            : (
-        <div>
-            <Loading />
-        </div>
+            <div>
+                <Loading />
+            </div>
             )}
         </div>
         )
           
+
           
-          
-          
-          
-          
-          
-          
-          {/* {carouselSlides.length ? (
-            carouselSlides.map((post) => (
-              
-              <div className="col-md-4 mb-4" key={post._id}>
-                <div className="card">
-                  <img
-                    className="card-img-top"
-                    // src={post.id}
-                    // alt={slideTitle}
-                    style={{ height: "200px", objectFit: "cover" }}
-                  />
-                <div className="card-body">
-                    <h5 className="card-title">{post.title}</h5>
-                    <p className="card-text">{`${post.body.substr(0, 50)}...`}</p>
-                    <Link to={`/post/${post._id}`} className="btn btn-primary">
-                     More
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            // <Loading />
-            <p>test</p>
-          )}
-        </div>
-      );
-     */}
-    
-    {/* //   return (
-    // <div>
-    //     <h1 >Home</h1>
-    // </div> 
-    // ) */}
 }
+
 
 export default Home;

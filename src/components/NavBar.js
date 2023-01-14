@@ -43,12 +43,12 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <Link
-                to="/contact"
+                to="/book"
                 className="nav-link"
                 style={{ cursor: "pointer" }}
               >
                 <span data-bs-target="#navbarNav" data-bs-toggle="collapse">
-                  Contact
+                  Book
                 </span>
               </Link>
             </li>
