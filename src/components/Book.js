@@ -19,17 +19,25 @@ const Page = React.forwardRef((props, ref) => {
   });
 
 console.log(Page)
-const Book = (props) => {
-    // console.log(props.children)
+
+function Book ({data}) {
+    // console.log(data.items[0]) 
+    console.log(data.items[0].fields.image.fields.file.url) 
   return (
     <div id="test">
-    <HTMLFlipBook width={500} height={500}>
+    <HTMLFlipBook width={700} height={700}>
       <div 
         className="demoPage"
           
         // style={{backgroundImage: "url(https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350)"}}>
         >
-        <img src="https://via.placeholder.com/500"></img>
+        <img 
+          src={data.items[0].fields.image.fields.file.url}>
+          {/* style={{objectFit: "scale-down" }} */}
+          {/* style={{height: "200px"}} */}
+        </img>
+        {/* <img src="https://via.placeholder.com/500"></img> */}
+
         Page 1
       </div>
       <div
