@@ -1,66 +1,35 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import Header from "../components/Header"
 import { Link } from "react-router-dom"
+import { useParams } from 'react-router-dom';
 
+export default function Details({ data }) {
+	
+	const students = data
+	console.log('students in Student component', students.items[0].sys.id);
+	// console.log('useParams', useParams());
+	const { id } = useParams();
+	console.log('id aus useParams', id);
+	console.log('useParams', useParams());
+	// console.log(students.length);
 
+	let thisStudent =
+	students.length && students.find((student) => student.items.sys.id === id);
+	// console.log('this student', thisStudent);
 
+	// let thisStudent = false
+    if (thisStudent) {
+		return (
+			<div>
+				<h1>One Student!</h1>
+				<p>Student has the ID: {thisStudent.login.uuid}</p>
+				<p className="first-name">{thisStudent.name.first}</p>{' '}
+				{thisStudent.name.last} {thisStudent.email}
+			</div>
+		);
+	} else {
+		return <div>not found</div>;
+	}
 
-function Details() {
-  const { state } = useLocation();
-  const { data } = state;
-  console.log(state)
-  console.log(data.fields.title)
-  const detail = data.fields;
-
-  let Video = `http://${detail.trailer.fields.file.url}`
-  return (
-
-    <div className='container-details'>
-     
-      <div className='details-frame' >
-        <Header />
-        
-        
-        <div className='details-top'>
-          <Link className='linkback' to="/">back</Link>
-          <div className='details-title'> {detail.title}</div>
-          
-          <div className='detail-top-wrapper'>
-            <div className='left'> <div className='details-image'> <img src={detail.pictures.fields.file.url} alt="iamge"></img> </div> </div>
-            <div className='right'>
-              
-              <div className='details-duration'>Duration: {detail.duration} min</div>
-              <div className='details-duration'>Rating: {detail.rating} </div>
-              <div className='details-duration'>Year: {detail.year} </div>
-              <div className='details-actors'>Actors: {detail.actors}</div>
-              <div className='details-abstract'>{detail.abstract}</div>
-             
-            </div>
-          </div>
-
-          <div className='details-video-text'>Plot</div>
-          
-          <div className='details-plot'>{detail.plot}</div>
-
-
-          <div className='details-video-text'>Trailer</div> 
-           <div className='details-video'> 
-            <video controls autoPlay={"autoplay"}  src={Video} muted  type="video/mp4">
-              
-            </video>
-          </div>
-        
  
-        </div>
-
-      </div> 
-      
-    </div>
-
-
-    
-  )
 }
-
-export default Details

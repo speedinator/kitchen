@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 // import { toast } from "react-toastify";
 // import axios from "axios";
 import Loading from './Loading';
-
 import { client } from '../client'
-
+import useData from './Getdata';
 
 const Home = () => { 
-
+  const data = useData()  
+  console.log(data.items)
+    // console.log(useStudents());
     // const [posts, setPosts] = useState([]);
     // const [isCarouselLoading, setIsCarouselLoading] = useState(true)
     const [carouselSlides, setCarouselSlides] = useState([])
@@ -30,15 +31,15 @@ const Home = () => {
         
     }, []
     )
-    // console.log(carouselSlides[0])
+    
     const getCarouselSlides = useCallback(
         async () => {
             try { 
                 const response = await client.getEntries({ content_type: 'kitchenCarous' })
-                console.log(JSON.stringify(response))
+                // console.log(JSON.stringify(response))
                 const responseData = response.items
                 cleanUpCarouselSlides(responseData)
-                // console.log(responseData)
+                
     
             } catch (error) {
                 console.log(error)
@@ -73,7 +74,8 @@ const Home = () => {
           {carouselSlides.length ? ( carouselSlides.map((item) => {
                 const { id, slideBG, slideTitle, slideDescription } = item
                 return (
-                    <div className="col-md-4 mb-4" key={id}>
+                    
+                  <div className="col-md-4 mb-4" key={id}>
                     <div className="card">
                       <img
                         className="card-img-top"
@@ -87,10 +89,10 @@ const Home = () => {
                         <Link to={`/post/${id}`} className="btn btn-primary">
                          More
                         </Link>
-                        {/* {console.log({id})} */}
                       </div>
                     </div>
                   </div>
+                  
                 )
           }))
           
