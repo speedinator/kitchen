@@ -66,13 +66,44 @@ const Book = (props) => {
       Neee danke!</div>
 
       <div className="demoPage">
-      <img src="https://img.chefkoch-cdn.de/rezepte/2258861361268001/bilder/548973/crop-642x428/gebackener-mettigel-hawaii.jpg" width="642px" height="428px"></img>
-      Wir beenden das hier mal...
+      <img src="https://img.chefkoch-cdn.de/rezepte/2146251344866223/bilder/544982/crop-642x428/blumenkohl-hack-auflauf.jpg" width="642px" height="428px"></img>
+      Blumenkohl Hackauflauf...
       </div>
 
       <div className="demoPage">
-      <img src="https://media.tenor.com/mdAWx_G5KjkAAAAd/cat-really.gif" width="642px" height="428"></img>
-      das jemand freiwillig so weit blättert ist mir schleierhaft...!
+      <img src="https://thumbs.gfycat.com/BogusAshamedDotterel-max-1mb.gif" width="642px" height="428"></img>
+      eher.. AUF-RENN!
+      </div>
+      
+      <div className="demoPage">
+      <img src="https://img.chefkoch-cdn.de/rezepte/2024751328273090/bilder/444950/crop-642x428/raeucherspeck-chips-mit-schokoladenglasur.jpg" width="642px" height="428px"></img>
+      RÄUCHERSPECk CHIPS MIT SCHOKOLADENGLASUR...!
+      </div>
+
+      <div className="demoPage">
+      <img src="https://i.giphy.com/media/l0MYKBx3N6VCrFwaI/giphy.webp" width="642px" height="428"></img>
+      meine persönliche Reaktion wenn mir jemand DAS anbieten sollte!
+      </div>
+
+      <div className="demoPage">
+      <img src="https://img.chefkoch-cdn.de/rezepte/1390831244109228/bilder/183850/crop-642x428/vanille-gelato.jpg" width="642px" height="428px"></img>
+      Ratet mal was das ist...!
+      </div>
+
+      <div className="demoPage">
+      <img src="https://media.tenor.com/HWU9s_mEieEAAAAC/bh187-spongebob.gif" width="642px" height="428"></img>
+      Richtig! Vanille Gelato...!
+      </div>
+
+
+      <div className="demoPage">
+      <img src="https://media.tenor.com/2oCiVmu1WWwAAAAC/my-eyes-screaming.gif" width="642px" height="428px"></img>
+      Wir beenden das hier mal..
+      </div>
+
+      <div className="demoPage">
+      <img src="https://cdn.dribbble.com/users/576253/screenshots/2479578/the_end_dribbble_still_2x.gif?compress=1&resize=400x300" width="642px" height="428px"></img>
+      Guten Appetit!
       </div>
       
 

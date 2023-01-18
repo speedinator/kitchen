@@ -1,8 +1,4 @@
-img{
-    border: 5px solid red;
-    border-radius: 25px;
-    
-}
+
 
 #test {
     display: flex;
@@ -10,5 +6,10 @@ img{
     height: 700px;
     justify-content: center;
     vertical-align: middle;
-    border: 2px cornflowerblue solid;
+    
+}
+
+.demoPage img{
+    border: 5px solid red;
+    border-radius: 25px;
 }
