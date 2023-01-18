@@ -1,11 +1,52 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom"
 import { useParams } from 'react-router-dom';
 import styles from './styles.css'
+import { client } from '../client'
 
 export default function Details({ data }) {
 	
+
+// 		useEffect(() => {
+// 	// console.log('testEffect', useEffect(() => {
+// 		// alert('hallo')
+// 		const fetchData = async () => {
+//             try {
+//                 const response = await client.getEntries({ content_type: 'kitchenCarous'})
+//                 // console.log(JSON.stringify(response))
+// 				// console.log('test response', response)
+//                 return response
+
+//             } catch(error) {
+//                 console.log(error)
+//             }
+//         };
+//         fetchData();
+// 		console.log('test response nach fetch', fetchData())
+
+// 	}, [])
+// 	return 
+// }
+
+
+	// const getAuthors = async () => {
+	// 	try {
+	// 		const entries = client.getEntries({
+	// 			content_type: 'kitchenCarous',
+	// 			select: 'fields'
+
+	// 		})
+	// 		return entries
+	// 	} catch (error) {
+	// 		console.log('error')
+	// 	}
+		
+	// }
+
+	// console.log('entries', getAuthors())
+
+
 	const students = data
 	// console.log('students in Student component', students.items.sys.id);
 	// console.log('useParams', useParams());
@@ -22,8 +63,8 @@ export default function Details({ data }) {
 	
 	let thisStudent =
 	test.length && test.find((student) => student.sys.id === id);
-	console.log('this student', thisStudent);
-	console.log('this student details', thisStudent.fields);
+	// console.log('this student', thisStudent);
+	// console.log('this student details', thisStudent.fields);
 
 	// let thisStudent = false
     if (thisStudent) {

@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import Loading from './Loading';
 import { client } from '../client'
 import useData from './Getdata';
+import styles from './styles.css'
 
 const Home = () => { 
   const data = useData()  
   console.log(data.items)
-    // console.log(useStudents());
-    // const [posts, setPosts] = useState([]);
-    // const [isCarouselLoading, setIsCarouselLoading] = useState(true)
+
     const [carouselSlides, setCarouselSlides] = useState([])
 
     const cleanUpCarouselSlides = useCallback((rawData) => {
@@ -19,7 +18,7 @@ const Home = () => {
             console.log(slide.sys.id)
             const {sys,fields} = slide
             const {id} = sys
-            const slideTitle = fields.slideTitle
+            const slideTitle = fields.title
             const slideDescription = fields.description
             const slideBG = fields.image.fields.file.url
             const updatedSlide = { id, slideTitle, slideDescription, slideBG } 
@@ -75,8 +74,9 @@ const Home = () => {
                 const { id, slideBG, slideTitle, slideDescription } = item
                 return (
                     
-                  <div className="col-md-4 mb-4" key={id}>
-                    <div className="card">
+                  <div className="col-md-4 mb-4 temp"  key={id}>
+                    <div className="card temp" >
+                      <h3 className="card-title">{slideTitle}</h3>
                       <img
                         className="card-img-top"
                         src={slideBG}
@@ -84,9 +84,11 @@ const Home = () => {
                         style={{ height: "200px", objectFit: "scale-down" }}
                       />
                     <div className="card-body">
-                        <h5 className="card-title">{slideTitle}</h5>
-                        <p className="card-text">{`${slideDescription.substr(0, 150)}...`}</p>
-                        <Link to={`/post/${id}`} className="btn btn-primary">
+                        <p className="card-text">{`${slideDescription.substr(0, 200)}...`}</p>
+                        <Link to={`/post/${id}`} 
+                        // className="btn btn-primary"
+                        className="card-button"
+                        >
                          More
                         </Link>
                       </div>

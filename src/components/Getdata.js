@@ -4,21 +4,24 @@ import { client } from '../client'
 
 const useData = () => {
   const [students, setStudents] = useState([]);
-
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await client.getEntries({ content_type: 'kitchenCarous'})
                 // console.log(JSON.stringify(response))
-                // const responseData = response.items
+                console.log(response)
                 setStudents(response)
 
             } catch(error) {
                 console.log(error)
             }
         };
-        fetchData(); 
+        fetchData();
+
     }, []);
+
+    
     return (
         students
     )
