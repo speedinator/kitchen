@@ -5,21 +5,35 @@ import { client } from '../client'
 const useData = () => {
   const [students, setStudents] = useState([]);
     
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await client.getEntries({ content_type: 'kitchenCarous'})
-                // console.log(JSON.stringify(response))
-                console.log(response)
-                setStudents(response)
+  useEffect(() => {
+    const fetchData = async () => {
+    //   setLoading(true);
+      const res = await axios.get(
+        "http://localhost:8080/dishes"
+      );
+      setStudents(res.data);
+      console.log(res.data)
+    //   setLoading(false);
+    };
+    fetchData();
+    
+  }, []);
 
-            } catch(error) {
-                console.log(error)
-            }
-        };
-        fetchData();
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await client.getEntries({ content_type: 'kitchenCarous'})
+    //             // console.log(JSON.stringify(response))
+    //             console.log(response)
+    //             setStudents(response)
 
-    }, []);
+    //         } catch(error) {
+    //             console.log(error)
+    //         }
+    //     };
+    //     fetchData();
+
+    // }, []);
 
     
     return (

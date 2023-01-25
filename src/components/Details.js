@@ -7,76 +7,32 @@ import { client } from '../client'
 
 export default function Details({ data }) {
 	
-
-// 		useEffect(() => {
-// 	// console.log('testEffect', useEffect(() => {
-// 		// alert('hallo')
-// 		const fetchData = async () => {
-//             try {
-//                 const response = await client.getEntries({ content_type: 'kitchenCarous'})
-//                 // console.log(JSON.stringify(response))
-// 				// console.log('test response', response)
-//                 return response
-
-//             } catch(error) {
-//                 console.log(error)
-//             }
-//         };
-//         fetchData();
-// 		console.log('test response nach fetch', fetchData())
-
-// 	}, [])
-// 	return 
-// }
-
-
-	// const getAuthors = async () => {
-	// 	try {
-	// 		const entries = client.getEntries({
-	// 			content_type: 'kitchenCarous',
-	// 			select: 'fields'
-
-	// 		})
-	// 		return entries
-	// 	} catch (error) {
-	// 		console.log('error')
-	// 	}
-		
-	// }
-
-	// console.log('entries', getAuthors())
+console.log(data)
 
 
 	const students = data
-	// console.log('students in Student component', students.items.sys.id);
-	// console.log('useParams', useParams());
-	console.log(students.items.length)
-	const dataArray = students.items
+
+	console.log(data)
+
+	const dataArray = students
 	const { id } = useParams();
 	console.log('id aus useParams', id);
 	console.log('useParams', useParams());
-	// console.log(students.length);
 
-	let test = students.items.map((data) => data)
 
-	console.log(test.length)
-	
+	let test = students.map((data) => data)
+
+
 	let thisStudent =
-	test.length && test.find((student) => student.sys.id === id);
-	// console.log('this student', thisStudent);
-	// console.log('this student details', thisStudent.fields);
+	test.length && test.find((student) => student.id === parseInt(id) );
 
-	// let thisStudent = false
     if (thisStudent) {
 		return (
 			<div className='box'>
-				<h1>{thisStudent.fields.title} , Hmm!</h1>
-				<img src={thisStudent.fields.image.fields.file.url}  className="img-fluid"></img>
-				{/* // <img src={thisStudent.fields.image.fields.file.url}></img> */}
-				 <p>Details für Feinschmecker: {thisStudent.fields.description}</p>
-				 {/* <p>Details für Feinschmecker: {JSON.stringify(thisStudent)}</p> */}
-				{/* <p className="first-name">{thisStudent}</p>{' '} */}
-				{/* {thisStudent.name.last} {thisStudent.email} */}
+				<h1>{thisStudent.title} , Hmm!</h1>
+				<img src={thisStudent.url}  className="img-fluid"></img>
+				 <p>Details für Feinschmecker: {thisStudent.desc_s}</p>
+
 			</div>
 		);
 	} else {
@@ -87,7 +43,7 @@ export default function Details({ data }) {
 					</br> 
 					Page ID= {id} 
 					<br></br>
-					Student ID ={ students.items[0].sys.id}
+					Student ID ={test[0].id}
 				</div>
 				
 		);

@@ -16,6 +16,10 @@ import Carousel from "./components/Carousel/Carousel";
 
 function App() {
 
+  
+
+  
+
   const data = useData() 
   // console.log(data)
 
@@ -28,7 +32,7 @@ function App() {
       <NavBar />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home data={data}/>} />
           <Route path="/Carousel" element={<Carousel />} />
           <Route path="/Book" element={<Book data={data} />} />    
           <Route path="/post/:id" element={<Details data={data}/>} />

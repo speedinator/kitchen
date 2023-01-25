@@ -5,6 +5,13 @@ import App from './App';
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
 
+// require('dotenv').config()
+// require('dotenv').config({ path: require('find-config')('.env') })
+// require("dotenv").config();
+// const express = require("express");
+// const app = express();
+// const port = 8080;
+// const cors = require("cors");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
